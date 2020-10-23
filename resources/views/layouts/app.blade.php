@@ -115,9 +115,9 @@
   </aside>
 
   <!-- Content Wrapper. Contains page content -->
-  <div class="content-wrapper">
+  <main class="content-wrapper">
     @yield('content')
-  </div>
+  </main>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
     <strong>Copyright &copy; <script>document.write(new Date().getFullYear());</script> </strong> All rights reserved | Consultorio
