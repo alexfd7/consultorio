@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Carbon\Carbon;
 
 class Patient extends Model
 {
@@ -18,7 +19,7 @@ class Patient extends Model
     protected $fillable = [
         'name',
         'cpf',
-        'brithday',
+        'birthday',
     ];
 
     /**
@@ -36,9 +37,21 @@ class Patient extends Model
      * @var array
      */
     protected $dates = [
-        'brithday',
+        'birthday',
     ];
 
+    public function getBirthdayAttribute( $value ) {
+      return (new Carbon($value))->format('d/m/Y');
+    }  
+
+    public function getBirthday2Attribute( $value ) {
+      
+      return (new Carbon($this->birthday))->format('Y-m-d');
+    }      
+
+    public function getCreatedAtAttribute( $value ) {
+      return (new Carbon($value))->format('d/m/Y');
+    }  
 
     public function appointments()
     {

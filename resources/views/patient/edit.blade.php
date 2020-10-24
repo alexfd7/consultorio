@@ -5,11 +5,11 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Cadastrar Novo Médico
+            <h1 class="m-0 text-dark">Editar Paciente
 
 
 
-              <a href="{{ route('doctor.index','') }}" class="btn btn-sm btn-default"><i class="fas fa-undo"></i> Voltar</a>  
+              <a href="{{ route('patient.index','') }}" class="btn btn-sm btn-default"><i class="fas fa-undo"></i> Voltar</a>  
             </h1>
           </div><!-- /.col -->
 
@@ -24,29 +24,36 @@
               <div class="card-body">
   
                       <div  class="row" style="display: inline-block;">
-                        <form id="form_cadastrar" role="form" method="POST" action="{{ route('doctor.store') }}" enctype="multipart/form-data" >
+                        <form id="form_cadastrar" role="form" method="POST" action="{{ route('patient.store') }}" enctype="multipart/form-data" >
                             @csrf
+
+
+                            <div class="form-group col-md-6" style="display: inline-block;">
+                              <label>Código:</label>
+                              <input type="text" readonly="true" class="form-control"  id="id" name="id" placeholder="" value="{{$patient->id}}">
+                               
+                            </div>                             
 
                             <div class="form-group col-md-6" style="display: inline-block;">
                               <label>Nome:</label>
-                              <input type="text" class="form-control" name="name"  id="name" placeholder="Digite o nome" value="{{ old('name') }}"  >
+                              <input type="text" class="form-control" name="name"  id="name" placeholder="" value="{{$patient->name}}"  >
                               @error('name')
                                   <div class="alert" style="padding: 0; color: red; font-weight: 600;">{{ $message }}</div>
                               @enderror                                         
                             </div> 
 
                             <div class="form-group col-md-6" style="display: inline-block;">
-                              <label>CRM:</label>
-                              <input type="text" class="form-control" name="crm"  id="crm" placeholder="Digite o CRM" value="{{ old('crm') }}"  />
-                              @error('crm')
+                              <label>CPF:</label>
+                              <input type="number" class="form-control" name="cpf" id="cpf" placeholder="" value="{{$patient->cpf}}" />
+                              @error('cpf')
                                   <div class="alert" style="padding: 0; color: red; font-weight: 600;">{{ $message }}</div>
                               @enderror                                         
                             </div> 
 
                             <div class="form-group col-md-6" style="display: inline-block;">
-                              <label>Especialidade:</label>
-                              <input type="text" class="form-control" name="speciality"  id="speciality" placeholder="Digite a especialidade" value="{{ old('speciality') }}" >
-                              @error('speciality')
+                              <label>Data de Nascimento:</label>
+                              <input type="date" class="form-control" name="birthday"  id="birthday" value="{{$patient->birthday2}}" >
+                              @error('birthday')
                                   <div class="alert" style="padding: 0; color: red; font-weight: 600;">{{ $message }}</div>
                               @enderror                                         
                             </div>                                                         

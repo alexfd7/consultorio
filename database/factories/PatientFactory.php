@@ -24,8 +24,8 @@ class PatientFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'cpf' => $this->faker->word,
-            'brithday' => $this->faker->date(),
+            'cpf' => mt_rand(10000000000, 99999999999),
+            'birthday' => $this->faker->date(),
         ];
     }
 }

@@ -24,8 +24,8 @@ class DoctorFactory extends Factory
     {
         return [
             'name' => $this->faker->name,
-            'crm' => $this->faker->word,
-            'specialty' => $this->faker->word,
+            'crm' => mt_rand(100000, 999999),
+            'speciality' => $this->faker->word,
         ];
     }
 }

@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Carbon\Carbon;
 
 class Doctor extends Model
 {
@@ -18,7 +19,7 @@ class Doctor extends Model
     protected $fillable = [
         'name',
         'crm',
-        'specialty',
+        'speciality'        
     ];
 
     /**
@@ -30,6 +31,9 @@ class Doctor extends Model
         'id' => 'integer',
     ];
 
+    public function getCreatedAtAttribute( $value ) {
+      return (new Carbon($value))->format('d/m/Y');
+    }   
 
     public function appointments()
     {

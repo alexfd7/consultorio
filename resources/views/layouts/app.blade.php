@@ -11,6 +11,7 @@
 
 
   <link href="{{ asset('css/all.css') }}" rel="stylesheet">
+  
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
@@ -81,7 +82,7 @@
                   
           <li class="nav-item has-treeview">
             <a  class="nav-link">
-              <i class="nav-icon fas fa-database"></i>
+              <i class="nav-icon fas fa-folder-open"></i>
               <p>
                 Cadastros
                 <i class="fas fa-angle-left right"></i>
@@ -89,12 +90,14 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="{{ route('patient.index') }}" class="nav-link">                  
+                <a href="{{ route('patient.index') }}" class="nav-link"> 
+                <i class="nav-icon fas fa-user"></i>                 
                   <p>Pacientes</p>
                 </a>
               </li>
               <li class="nav-item">
                 <a href="{{ route('doctor.index') }}" class="nav-link">                  
+                  <i class="nav-icon fas fa-user-md"></i>                 
                   <p>Médicos</p>
                 </a>
               </li>
@@ -118,7 +121,8 @@
   <footer class="main-footer">
     <strong>Copyright &copy; <script>document.write(new Date().getFullYear());</script> </strong> All rights reserved | Consultorio
     <div class="float-right d-none d-sm-inline-block">
-      <b>Version</b> 1.0.0
+      <b>Version</b> {{ config('app.version') }}
+
     </div>
   </footer>
  
@@ -129,10 +133,24 @@
 <script src="{{ asset('js/app.js') }}"></script>
 
 
+
+@yield('js')
+
 <script>
         $(document).ready(function() {
+
+
+          $('div.alert').not('.alert-important').delay(3000).fadeOut(350);
+          
+          $('.table-datatable').dataTable( {
+              "language": {
+                  "url": "https://cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese-Brasil.json"
+              }
+          } );   
+
           
           var valor = "{{ session()->get('open') }}";
+          var url = "{{ route('home.open_menu') }}";
           
           if(valor==1){            
             $('body').addClass('sidebar-mini layout-fixed'); 
@@ -153,7 +171,7 @@
                 });
                  
                  $.ajax({
-                    url: "{{ route('home.open_menu') }}",
+                    url: url,
                     method: 'post',
                     data: {open: (open ? 1 : 0)},
                     success: function(result){

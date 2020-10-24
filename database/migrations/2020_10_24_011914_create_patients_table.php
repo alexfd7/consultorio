@@ -17,7 +17,7 @@ class CreatePatientsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('cpf');
-            $table->date('brithday');
+            $table->date('birthday');
             $table->softDeletes();
             $table->timestamps();
         });
