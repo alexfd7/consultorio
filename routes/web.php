@@ -22,3 +22,15 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::post('/open_menu', [App\Http\Controllers\HomeController::class, 'open_menu'])->name('home.open_menu');
+
+
+/*Patient Routes*/
+Route::get('/patient', [App\Http\Controllers\PatientController::class, 'index'])->name('patient.index');
+Route::get('/patient/{id}', [App\Http\Controllers\PatientController::class, 'create'])->name('patient.create');
+Route::post('/patient', [App\Http\Controllers\PatientController::class, 'store'])->name('patient.store');
+
+
+/*Doctor Routes*/
+Route::get('/doctor', [App\Http\Controllers\DoctorController::class, 'index'])->name('doctor.index');
+Route::get('/doctor/{id}', [App\Http\Controllers\DoctorController::class, 'create'])->name('doctor.create');
+Route::post('/doctor', [App\Http\Controllers\DoctorController::class, 'store'])->name('doctor.store');

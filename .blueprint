@@ -1,0 +1,26 @@
+created:
+    - app/Http/Controllers/PatientController.php
+    - app/Http/Controllers/DoctorController.php
+    - database/factories/Models/PatientFactory.php
+    - database/factories/Models/DoctorFactory.php
+    - database/factories/Models/AppointmentFactory.php
+    - database/migrations/2020_10_24_011914_create_patients_table.php
+    - database/migrations/2020_10_24_011915_create_doctors_table.php
+    - database/migrations/2020_10_24_011916_create_appointments_table.php
+    - app/Models/Patient.php
+    - app/Models/Doctor.php
+    - app/Models/Appointment.php
+    - database/seeders/PatientSeeder.php
+    - database/seeders/DoctorSeeder.php
+    - tests/Feature/Http/Controllers/PatientControllerTest.php
+    - tests/Feature/Http/Controllers/DoctorControllerTest.php
+    - resources/views/patient/index.blade.php
+    - resources/views/patient/create.blade.php
+    - resources/views/doctor/index.blade.php
+    - resources/views/doctor/create.blade.php
+updated:
+    - routes/web.php
+models:
+    Models\Patient: { name: string, cpf: string, brithday: date, timestamps: timestamps, softdeletes: softDeletes, relationships: { hasMany: Appointment } }
+    Models\Doctor: { name: string, crm: string, specialty: string, timestamps: timestamps, softdeletes: softDeletes, relationships: { hasMany: Appointment } }
+    Models\Appointment: { patient_id: 'id foreign', doctor_id: 'id foreign', date_appointment: timestamp, timestamps: true }
