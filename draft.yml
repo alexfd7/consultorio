@@ -2,7 +2,7 @@ models:
   Models\Patient:
     name: string
     cpf: string
-    brithday: date      
+    birthday: date      
     timestamps: true
     softDeletes: true
     relationships:
@@ -11,7 +11,7 @@ models:
   Models\Doctor:  
     name: string
     crm: string
-    specialty:  string      
+    speciality:  string      
     timestamps: true
     softDeletes: true
     relationships:

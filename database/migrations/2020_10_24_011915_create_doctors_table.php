@@ -17,7 +17,7 @@ class CreateDoctorsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('crm');
-            $table->string('specialty');
+            $table->string('speciality');
             $table->softDeletes();
             $table->timestamps();
         });

@@ -19,5 +19,6 @@ mix.js('resources/js/app.js', 'public/js')
 mix.styles([
     'resources/css/adminlte.css',
     'resources/css/overlayScrollbars/css/OverlayScrollbars.css',
-    'resources/css/fontawesome-free/css/all.css'
+    'resources/css/fontawesome-free/css/all.css',
+    'resources/css/datatables/jquery.dataTables.css',
 ], 'public/css/all.css');

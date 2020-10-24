@@ -26,11 +26,13 @@ Route::post('/open_menu', [App\Http\Controllers\HomeController::class, 'open_men
 
 /*Patient Routes*/
 Route::get('/patient', [App\Http\Controllers\PatientController::class, 'index'])->name('patient.index');
-Route::get('/patient/{id}', [App\Http\Controllers\PatientController::class, 'create'])->name('patient.create');
-Route::post('/patient', [App\Http\Controllers\PatientController::class, 'store'])->name('patient.store');
+Route::get('/patient/create/{id?}', [App\Http\Controllers\PatientController::class, 'create'])->name('patient.create');
+Route::post('/patient/store', [App\Http\Controllers\PatientController::class, 'store'])->name('patient.store');
+Route::post('/patient/delete',  [App\Http\Controllers\PatientController::class, 'delete'])->name('patient.delete');
 
 
 /*Doctor Routes*/
 Route::get('/doctor', [App\Http\Controllers\DoctorController::class, 'index'])->name('doctor.index');
-Route::get('/doctor/{id}', [App\Http\Controllers\DoctorController::class, 'create'])->name('doctor.create');
-Route::post('/doctor', [App\Http\Controllers\DoctorController::class, 'store'])->name('doctor.store');
+Route::get('/doctor/create/{id?}', [App\Http\Controllers\DoctorController::class, 'create'])->name('doctor.create');
+Route::post('/doctor/store', [App\Http\Controllers\DoctorController::class, 'store'])->name('doctor.store');
+Route::post('/doctor/delete',  [App\Http\Controllers\DoctorController::class, 'delete'])->name('doctor.delete');
