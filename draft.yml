@@ -1,0 +1,49 @@
+models:
+  Models\Patient:
+    name: string
+    cpf: string
+    brithday: date      
+    timestamps: true
+    softDeletes: true
+    relationships:
+      hasMany:  Appointment
+
+  Models\Doctor:  
+    name: string
+    crm: string
+    specialty:  string      
+    timestamps: true
+    softDeletes: true
+    relationships:
+      hasMany:  Appointment        
+
+  Models\Appointment:
+    patient_id: id foreign
+    doctor_id: id foreign
+    date_appointment: timestamp
+    timestamps: true    
+
+controllers:
+    Patient:
+      index:
+        query: all
+        render: patient.index with:patients
+      create:
+        query: where:id
+        render: patient.create with:patients        
+      store: 
+        save: patient             
+        redirect: patient.index
+
+    Doctor:
+      index:
+        query: all
+        render: doctor.index with:doctors
+      create:
+        query: where:id
+        render: doctor.create  with:doctors       
+      store: 
+        save: doctor        
+        redirect: doctor.index        
+         
+seeders: Patient, Doctor

@@ -55,7 +55,7 @@
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
     <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link" style="text-align: center;">
+    <a href="{{ route('home') }}" class="brand-link" style="text-align: center;">
 
       <span class="brand-text font-weight-light">CONSULTORIO</span>
     </a>
@@ -80,7 +80,7 @@
           </li>
                   
           <li class="nav-item has-treeview">
-            <a href="#" class="nav-link">
+            <a  class="nav-link">
               <i class="nav-icon fas fa-database"></i>
               <p>
                 Cadastros
@@ -89,20 +89,16 @@
             </a>
             <ul class="nav nav-treeview">
               <li class="nav-item">
-                <a href="pages/layout/top-nav.html" class="nav-link">                  
+                <a href="{{ route('patient.index') }}" class="nav-link">                  
                   <p>Pacientes</p>
                 </a>
               </li>
               <li class="nav-item">
-                <a href="pages/layout/top-nav-sidebar.html" class="nav-link">                  
+                <a href="{{ route('doctor.index') }}" class="nav-link">                  
                   <p>Médicos</p>
                 </a>
               </li>
-              <li class="nav-item">
-                <a href="pages/layout/boxed.html" class="nav-link">                  
-                  <p>Usuários</p>
-                </a>
-              </li>
+
 
             </ul>
           </li>
