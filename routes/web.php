@@ -36,3 +36,6 @@ Route::get('/doctor', [App\Http\Controllers\DoctorController::class, 'index'])->
 Route::get('/doctor/create/{id?}', [App\Http\Controllers\DoctorController::class, 'create'])->name('doctor.create');
 Route::post('/doctor/store', [App\Http\Controllers\DoctorController::class, 'store'])->name('doctor.store');
 Route::post('/doctor/delete',  [App\Http\Controllers\DoctorController::class, 'delete'])->name('doctor.delete');
+
+
+Route::get('/teste', [App\Http\Controllers\ApiController::class, 'doctor'])->name('teste');
