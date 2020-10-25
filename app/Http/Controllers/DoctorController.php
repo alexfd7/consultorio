@@ -9,6 +9,11 @@ use Carbon\Carbon;
 
 class DoctorController extends Controller
 {
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }    
     /**
      * @param \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
