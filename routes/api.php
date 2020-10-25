@@ -14,4 +14,4 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('doctor', [App\Http\Controllers\ApiController::class, 'doctor']);]
+Route::get('doctor', [App\Http\Controllers\ApiController::class, 'doctor']);

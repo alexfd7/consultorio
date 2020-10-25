@@ -1,0 +1,4 @@
+- ## Documentação	
+    - [Visão Geral](/{{route}}/{{version}}/overview)            
+    - [Instalação Manual](/{{route}}/{{version}}/installation)    
+    - [Bibliotecas](/{{route}}/{{version}}/libraries)
