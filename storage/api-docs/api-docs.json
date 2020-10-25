@@ -1,0 +1,34 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Documentação API",
+        "contact": {
+            "email": "alexfd7@gmail.com"
+        },
+        "version": "0.1"
+    },
+    "paths": {
+        "/consultorio/public/api/doctor": {
+            "get": {
+                "tags": [
+                    "Medicos"
+                ],
+                "summary": "Retorna lista com todos os médicos",
+                "operationId": "doctor",
+                "responses": {
+                    "200": {
+                        "description": "Successful!"
+                    }
+                }
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Medicos"
+        }
+    ],
+    "security": [
+        []
+    ]
+}
