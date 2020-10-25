@@ -1,4 +1,4 @@
 - ## Documentação	
-    - [Visão Geral](/{{route}}/{{version}}/overview)            
-    - [Instalação Manual](/{{route}}/{{version}}/installation)    
-    - [Bibliotecas](/{{route}}/{{version}}/libraries)
+    - [Visão Geral](/consultorio/public/{{route}}/{{version}}/overview)            
+    - [Instalação Manual](/consultorio/public/{{route}}/{{version}}/installation)    
+    - [Bibliotecas](/consultorio/public/{{route}}/{{version}}/libraries)
