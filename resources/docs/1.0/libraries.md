@@ -96,6 +96,7 @@ php artisan l5-swagger:generate
 |   FontAwesome  	 | <a href="https://fontawesome.com/" target="_blank">Documentation</a>		|
 |   Bootstrap  	 |  <a href="https://getbootstrap.com/docs/4.1/getting-started/introduction/" target="_blank">Documentation</a> 		|
 |   AdminLte  	 |  <a href="https://adminlte.io/" target="_blank">Documentation</a> 		|
+|   FullCalendar  	 |  <a href="https://fullcalendar.io/docs/getting-started" target="_blank">Documentation</a> 		|
 
 
 

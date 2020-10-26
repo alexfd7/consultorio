@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Patient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\DB;
 
 class PatientController extends Controller
 {
@@ -79,5 +80,20 @@ class PatientController extends Controller
         flash('Paciente removido com sucesso!')->success();
         return redirect()->route('patient.index');
          
-    }    
+    }  
+
+    public function patientJson(Request $request)
+    {
+        
+
+        $patients = DB::table('patients')
+        ->select('patients.id', 'patients.name as text')           
+        ->where('patients.name', 'like', '%' . $request->q . '%')
+        ->where('patients.deleted_at', NULL)->get(); 
+
+              
+        return response()->json(['items'=> $patients]);
+        
+    }   
+
 }
