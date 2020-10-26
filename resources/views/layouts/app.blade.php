@@ -9,13 +9,16 @@
   <!-- Tell the browser to be responsive to screen width -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-
   <link href="{{ asset('css/all.css') }}" rel="stylesheet">
-  
+  <link href="{{ asset('vendor/fullcalendar/fullcalendar.css') }}" rel="stylesheet">
+
+
+
+
 
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">
+  <div class="wrapper">
 
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -71,10 +74,10 @@
           <!-- Add icons to the links using the .nav-icon class
                with font-awesome or any other icon font library -->
           <li class="nav-item">
-            <a href="pages/calendar.html" class="nav-link">
+            <a href="{{ route('appointment.index') }}" class="nav-link">
               <i class="nav-icon far fa-calendar-alt"></i>
               <p>
-                Agendamento
+                Agenda
 
               </p>
             </a>
@@ -119,7 +122,7 @@
   </main>
   <!-- /.content-wrapper -->
   <footer class="main-footer">
-    <strong>Copyright &copy; <script>document.write(new Date().getFullYear());</script> </strong> All rights reserved | Consultorio
+    <strong>Copyright &copy; <script>document.write(new Date().getFullYear());</script> </strong> Todos os direitos reservados | Consultorio
     <div class="float-right d-none d-sm-inline-block">
       <b>Version</b> {{ config('app.version') }}
 
@@ -131,7 +134,8 @@
 <!-- ./wrapper -->
 
 <script src="{{ asset('js/app.js') }}"></script>
-
+<script src="{{ asset('vendor/fullcalendar/fullcalendar.js') }}"></script>
+<script src="{{ asset('vendor/fullcalendar/pt-br.js') }}"></script>
 
 
 @yield('js')
@@ -144,7 +148,7 @@
           
           $('.table-datatable').dataTable( {
               "language": {
-                  "url": "https://cdn.datatables.net/plug-ins/1.10.21/i18n/Portuguese-Brasil.json"
+                  "url": "{{ asset('vendor/datatable/Portuguese-Brasil.json') }}"
               }
           } );   
 
@@ -178,6 +182,8 @@
                     
                       
                     }});
+
+                 
                   
           });     
 

@@ -41,7 +41,9 @@ class ApiController extends Controller
         $doctors = Doctor::where('deleted_at', NULL)->get(); 
         return response()->json($doctors);
         
-    }               
+    } 
+
+
 
  
 }

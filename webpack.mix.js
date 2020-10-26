@@ -21,4 +21,6 @@ mix.styles([
     'resources/css/overlayScrollbars/css/OverlayScrollbars.css',
     'resources/css/fontawesome-free/css/all.css',
     'resources/css/datatables/jquery.dataTables.css',
+    'resources/css/select2/select2.min.css',    
+    'resources/css/custom.css',
 ], 'public/css/all.css');

@@ -29,11 +29,20 @@ Route::get('/patient', [App\Http\Controllers\PatientController::class, 'index'])
 Route::get('/patient/create/{id?}', [App\Http\Controllers\PatientController::class, 'create'])->name('patient.create');
 Route::post('/patient/store', [App\Http\Controllers\PatientController::class, 'store'])->name('patient.store');
 Route::post('/patient/delete',  [App\Http\Controllers\PatientController::class, 'delete'])->name('patient.delete');
-
+Route::post('/patientJson', [App\Http\Controllers\PatientController::class, 'patientJson'])->name('patient.json');
 
 /*Doctor Routes*/
 Route::get('/doctor', [App\Http\Controllers\DoctorController::class, 'index'])->name('doctor.index');
 Route::get('/doctor/create/{id?}', [App\Http\Controllers\DoctorController::class, 'create'])->name('doctor.create');
 Route::post('/doctor/store', [App\Http\Controllers\DoctorController::class, 'store'])->name('doctor.store');
 Route::post('/doctor/delete',  [App\Http\Controllers\DoctorController::class, 'delete'])->name('doctor.delete');
+Route::post('/doctorJson', [App\Http\Controllers\DoctorController::class, 'doctorJson'])->name('doctor.json');
+
+
+
+/*Appointment Routes*/
+Route::get('/appointment', [App\Http\Controllers\AppointmentController::class, 'index'])->name('appointment.index');
+Route::post('/appointment/store', [App\Http\Controllers\AppointmentController::class, 'store'])->name('appointment.store');
+Route::post('/appointmentJson', [App\Http\Controllers\AppointmentController::class, 'appointmentJson'])->name('appointment.json');
+
 

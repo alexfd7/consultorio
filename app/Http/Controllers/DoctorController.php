@@ -6,6 +6,7 @@ use App\Models\Doctor;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
 
 class DoctorController extends Controller
 {
@@ -89,5 +90,21 @@ class DoctorController extends Controller
         return redirect()->route('doctor.index');
          
     }
+
+
+    public function doctorJson(Request $request)
+    {
+        
+
+        $doctors = DB::table('doctors')
+        ->select('doctors.id', 'doctors.name as text')           
+        ->where('doctors.name', 'like', '%' . $request->q . '%')
+        ->where('doctors.deleted_at', NULL)->get(); 
+
+              
+        return response()->json(['items'=> $doctors]);
+        
+    }                        
+
 
 }

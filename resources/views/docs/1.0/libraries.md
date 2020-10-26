@@ -100,5 +100,6 @@ php artisan l5-swagger:generate
 |   SweetAlert    |  <a href="https://sweetalert.js.org/docs/" target="_blank">Documentation</a>			|
 |   FontAwesome  	 | <a href="https://fontawesome.com/" target="_blank">Documentation</a>		|
 |   Bootstrap  	 |  <a href="https://getbootstrap.com/docs/4.1/getting-started/introduction/" target="_blank">Documentation</a> 		|
+|   FullCalendar  	 |  <a href="https://fullcalendar.io/docs/getting-started" target="_blank">Documentation</a> 		|
 
 

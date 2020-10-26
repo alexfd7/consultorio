@@ -1,0 +1,16 @@
+  
+/*CUSTOM CSS*/
+  .select2-container .select2-selection--single {
+
+      height: calc(2.25rem + 2px) !important;
+
+  }
+
+
+  .fc-col-header,.fc-daygrid-body,.fc-scrollgrid-sync-table{
+  	width: 100% !important;
+  }
+  #calendar {
+    width: 100% !important;
+    margin: 0 auto;
+  }  
