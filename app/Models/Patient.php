@@ -44,11 +44,6 @@ class Patient extends Model
       return (new Carbon($value))->format('d/m/Y');
     }  
 
-    public function getBirthday2Attribute( $value ) {
-      
-      return (new Carbon($this->birthday))->format('Y-m-d');
-    }      
-
     public function getCreatedAtAttribute( $value ) {
       return (new Carbon($value))->format('d/m/Y');
     }  
