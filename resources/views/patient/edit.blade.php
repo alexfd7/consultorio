@@ -52,7 +52,7 @@
 
                             <div class="form-group col-md-6" style="display: inline-block;">
                               <label>Data de Nascimento:</label>
-                              <input type="date" class="form-control" name="birthday"  id="birthday" value="{{$patient->birthday2}}" >
+                              <input type="text" class="form-control" name="birthday"  id="birthday" value="{{$patient->birthday}}" >
                               @error('birthday')
                                   <div class="alert" style="padding: 0; color: red; font-weight: 600;">{{ $message }}</div>
                               @enderror                                         
