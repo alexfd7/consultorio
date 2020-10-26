@@ -50,9 +50,14 @@
                               @enderror                                         
                             </div> 
 
+
+                            @php
+                                $arr = explode("/", $patient->birthday);
+                                $data_formatada = $arr[2].'-'.$arr[1].'-'.$arr[0];                                
+                            @endphp
                             <div class="form-group col-md-6" style="display: inline-block;">
                               <label>Data de Nascimento:</label>
-                              <input type="text" class="form-control" name="birthday"  id="birthday" value="{{$patient->birthday}}" >
+                              <input type="date" class="form-control" name="birthday"  id="birthday" value="{{$data_formatada}}" >
                               @error('birthday')
                                   <div class="alert" style="padding: 0; color: red; font-weight: 600;">{{ $message }}</div>
                               @enderror                                         
